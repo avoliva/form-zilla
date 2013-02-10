@@ -1,0 +1,305 @@
+<!-- <DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Form Example</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-cookie/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript" src="formzilla-fields.js"></script>
+<script type="text/javascript" src="formzilla.js"></script>
+<script type="text/javascript" src="js/formToWizard.js"></script>
+<!-- <script type="text/javascript" src="js/validate.js"></script> -->
+<script type="text/javascript">
+        $(document).ready(function(){
+        	// $.getScript('filezilla.js', function(data, textStatus, jqXHR) {
+        	// 	console.log('hahahaha')
+        	// });
+           	$("#SignupForm").formToWizard({submitButton: 'SaveAccount' })
+      //      	$.getScript('formzilla.js', function(data, textStatus, jqXHR) {
+		    //     console.log(data); //data returned
+		    //     console.log(textStatus); //success
+		    //     console.log(jqXHR); //200
+		    //     console.log('Load was performed.');
+		    // });
+
+		  //  		$("#step0Next").click(function() { //handler for step to to fire calculations
+				// //strip raw data from the form to cacluate on
+				// var bal = $('#P_MortgageExisting').val();
+				// var val = $('#P_ValueEstimated').val();
+				// var equity = Math.round((bal / val)*100);
+				// $('#rpl-bal').html("$"+bal);
+				// $('#rpl-val').html("$"+val);
+				// $('#rpl-equity').html(equity+"%");
+				// //done writing to Step 2. Note that even on step one this is OK. Could add step checking here later.
+				// //Now some basic checks for the first 2 pages.
+				// $q1=$('#P_MortgageExisting').val();
+				// $q2=$('#P_ValueEstimated').val();
+				// if($q1 == "")
+				// {
+				// 	$('#step1Prev').trigger("click");
+				// 	window.alert( "Please Select Mortgage Amount" );
+				// } else
+				// {
+				// 	if($q2 == "")
+				// 	{
+				// 		$('#step1Prev').trigger("click");
+				// 		window.alert( "Please Select Home Value" );
+				// 	}
+				// }	
+				// $('#A_Zip').focus();
+				// });
+				// $("#step1Next").click(function() {
+				// 	$q3=$('#A_Zip').val();
+				// 	if($q3 == "")
+				// 	{
+				// 		$('#step2Prev').trigger("click");
+				// 		window.alert( "Please Input Zip" );
+				// 	} else
+				// 	{
+				// 		address = $('#A_Zip').val();
+				// 		// Using Google Maps' Geocoding API, we can reverse-search a location.
+				// 		geocoder = new google.maps.Geocoder();
+				
+				// 		geocoder.geocode({'address': address}, function(results, status) 
+				// 			{
+				// 				if (status == google.maps.GeocoderStatus.OK) 
+				// 				{// take first array element returned and loop through each address_components element
+				// 					for (x in results[0].address_components) 
+				// 					{
+				// 						address = results[0].address_components[x];
+				// 						for (y in address.types) 
+				// 						{
+				// 							address_type = address.types[y];
+				// 							if (address_type == "administrative_area_level_1") {
+				// 								$('#A_State').val(address.short_name);
+												
+				// 							} else if (address_type == "locality") {
+				// 								$('#A_City').val(address.long_name);
+				// 							}
+				// 						}
+				// 					}
+				// 				}
+				// 			});
+				// 			$('#part3 input[name=A_Zip]').val(address);
+				// 	}
+				// 				$('#A_Street').focus();
+				// });
+				// $("#step2Next").click(function() {
+				// if($('#A_Street').val() == "" || $('#A_City').val() == "" || $('#A_State').val() == "")
+				// {
+				// 	$('#step3Prev').trigger("click");
+				// 	window.alert( "Please Input Property Address" );
+				// } else
+				// {
+				// 	$('#N_First').focus();
+				// }
+				// })
+        });
+
+    </script>
+<link href="css/form.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+</head>
+
+<body style="background-color:#CCC">
+<div style="width:1400px">
+	<div id="formcontainer">
+		<!-- method="POST" action="http://mycontrolclick.com/gateway/post.php onsubmit="return v()" -->
+        <form id="SignupForm" name="0">
+                <fieldset id='1'>
+                    <legend>Estimate Savings</legend>
+                    <label for="P_MortgageExisting">Mortgage Balance <div class="formitalics">(OK To Estimate)</div></label>
+                    <select name="P_MortgageExisting" id="P_MortgageExisting"  value="" class="required">
+								<option value=""></option>
+								<option value="60000">50,000 - 60,000</option>
+								<option value="70000">60,001 - 70,000</option>
+								<option value="80000">70,001 - 80,000</option>
+								<option value="90000">80,001 - 90,000</option>
+								<option value="100000">90,001 - 100,000</option>
+								<option value="110000">100,001 - 110,000</option>
+								<option value="120000">110,001 - 120,000</option>
+								<option value="130000">120,001 - 130,000</option>
+								<option value="140000">130,001 - 140,000</option>
+								<option value="150000">140,001 - 150,000</option>
+								<option value="160000">150,001 - 160,000</option>
+								<option value="170000">160,001 - 170,000</option>
+								<option value="180000">170,001 - 180,000</option>
+								<option value="190000">180,001 - 190,000</option>
+								<option value="200000">190,001 - 200,000</option>
+								<option value="210000" selected="selected">200,001 - 210,000</option>
+								<option value="220000">210,001 - 220,000</option>
+								<option value="230000">220,001 - 230,000</option>
+								<option value="240000">230,001 - 240,000</option>
+								<option value="250000">240,001 - 250,000</option>
+								<option value="260000">250,001 - 260,000</option>
+								<option value="270000">260,001 - 270,000</option>
+								<option value="280000">270,001 - 280,000</option>
+								<option value="290000">280,001 - 290,000</option>
+								<option value="300000">290,001 - 300,000</option>
+								<option value="310000">300,001 - 310,000</option>
+								<option value="320000">310,001 - 320,000</option>
+								<option value="330000">320,001 - 330,000</option>
+								<option value="340000">330,001 - 340,000</option>
+								<option value="350000">340,001 - 350,000</option>
+								<option value="360000">350,001 - 360,000</option>
+								<option value="370000">360,001 - 370,000</option>
+								<option value="380000">370,001 - 380,000</option>
+								<option value="390000">380,001 - 390,000</option>
+								<option value="400000">390,001 - 400,000</option>
+								<option value="450000">400,001 - 450,000</option>
+								<option value="500000">450,001 - 500,000</option>
+								<option value="550000">500,001 - 550,000</option>
+								<option value="600000">550,001 - 600,000</option>
+								<option value="650000">600,001 - 650,000</option>
+								<option value="700000">650,001 - 700,000</option>
+								<option value="750000">700,001 - 750,000</option>
+								<option value="800000">750,001 - 800,000</option>
+								<option value="850000">800,001 - 850,000</option>
+								<option value="900000">850,001 - 900,000</option>
+								<option value="950000">900,001 - 950,000</option>
+								<option value="1000000">950,001 - 1,000,000</option>
+								<option value="1200000">1,000,001 - 1,200,000</option>
+								<option value="1400000">1,200,001 - 1,400,000</option>
+								<option value="1600000">1,400,001 - 1,600,000</option>
+								<option value="1800000">1,600,001 - 1,800,000</option>
+								<option value="2000000">1,800,001 - 2,000,000</option>
+								<option value="2200000">2,000,001 - 2,200,000</option>
+								<option value="2400000">2,200,001 - 2,400,000</option>
+								<option value="2600000">2,400,001 - 2,600,000</option>
+								<option value="2800000">2,600,001 - 2,800,000</option>
+								<option value="3000000">2,800,001 - 3,000,000</option>
+								<option value="3200000">3,000,001 - 3,200,000</option>
+								<option value="3400000">3,200,000+</option>
+							</select>		
+                     </select>
+                    <label for="P_ValueEstimated">Property Value <div class="formitalics">(OK To Estimate)</div></label>
+                    <select name="P_ValueEstimated" id="P_ValueEstimated" class="medium">
+                    <option value=""></option>
+								<option value="60000">50,000 - 60,000</option>
+								<option value="70000">60,001 - 70,000</option>
+								<option value="80000">70,001 - 80,000</option>
+								<option value="90000">80,001 - 90,000</option>
+								<option value="100000">90,001 - 100,000</option>
+								<option value="110000">100,001 - 110,000</option>
+								<option value="120000">110,001 - 120,000</option>
+								<option value="130000">120,001 - 130,000</option>
+								<option value="140000">130,001 - 140,000</option>
+								<option value="150000">140,001 - 150,000</option>
+								<option value="160000">150,001 - 160,000</option>
+								<option value="170000">160,001 - 170,000</option>
+								<option value="180000">170,001 - 180,000</option>
+								<option value="190000">180,001 - 190,000</option>
+								<option value="200000">190,001 - 200,000</option>
+								<option value="210000">200,001 - 210,000</option>
+								<option value="220000">210,001 - 220,000</option>
+								<option value="230000">220,001 - 230,000</option>
+								<option value="240000">230,001 - 240,000</option>
+								<option value="250000" selected="selected">240,001 - 250,000</option>
+								<option value="260000">250,001 - 260,000</option>
+								<option value="270000">260,001 - 270,000</option>
+								<option value="280000">270,001 - 280,000</option>
+								<option value="290000">280,001 - 290,000</option>
+								<option value="300000">290,001 - 300,000</option>
+								<option value="310000">300,001 - 310,000</option>
+								<option value="320000">310,001 - 320,000</option>
+								<option value="330000">320,001 - 330,000</option>
+								<option value="340000">330,001 - 340,000</option>
+								<option value="350000">340,001 - 350,000</option>
+								<option value="360000">350,001 - 360,000</option>
+								<option value="370000">360,001 - 370,000</option>
+								<option value="380000">370,001 - 380,000</option>
+								<option value="390000">380,001 - 390,000</option>
+								<option value="400000">390,001 - 400,000</option>
+								<option value="450000">400,001 - 450,000</option>
+								<option value="500000">450,001 - 500,000</option>
+								<option value="550000">500,001 - 550,000</option>
+								<option value="600000">550,001 - 600,000</option>
+								<option value="650000">600,001 - 650,000</option>
+								<option value="700000">650,001 - 700,000</option>
+								<option value="750000">700,001 - 750,000</option>
+								<option value="800000">750,001 - 800,000</option>
+								<option value="850000">800,001 - 850,000</option>
+								<option value="900000">850,001 - 900,000</option>
+								<option value="950000">900,001 - 950,000</option>
+								<option value="1000000">950,001 - 1,000,000</option>
+								<option value="1200000">1,000,001 - 1,200,000</option>
+								<option value="1400000">1,200,001 - 1,400,000</option>
+								<option value="1600000">1,400,001 - 1,600,000</option>
+								<option value="1800000">1,600,001 - 1,800,000</option>
+								<option value="2000000">1,800,001 - 2,000,000</option>
+								<option value="2200000">2,000,001 - 2,200,000</option>
+								<option value="2400000">2,200,001 - 2,400,000</option>
+								<option value="2600000">2,400,001 - 2,600,000</option>
+								<option value="2800000">2,600,001 - 2,800,000</option>
+								<option value="3000000">2,800,001 - 3,000,000</option>
+								<option value="3200000">3,000,001 - 3,200,000</option>
+								<option value="3400000">3,200,000+</option>
+                    </select>
+                </fieldset>
+                <fieldset id='2'>
+                    <legend>Review Results</legend>
+                    <div id="resultsbox">
+                        <div class="calc">Loan Amount: 			<div id="rpl-bal">$0</div></div>
+                        <div class="calc">Equity Amount: 		<div id="rpl-val">$0</div></div>
+                        <div class="calc">LTV Ratio: 			<div id="rpl-equity">$0</div></div>
+                        <div class="calc">HARP PreCheck:<strong><div id="rpl-new"> PASSED&#x2713;</div></strong></div>
+                    </div>
+                    <label for="A_Zip">Property Zip Code</label>
+                    <input type="text" style="width:50px;" name="A_Zip" id="A_Zip" value="">
+                </fieldset>
+                <fieldset id='3'>
+                    <legend>Property Elgibility</legend>
+                    <label for="street"><strong>Confirm Street Address</strong></label>
+                    <input type="text" name="A_Street" id="A_Street" value="" >
+                    <div style="overflow: hidden;">
+                        <div style="float:left; margin-right:8px; ">
+                            <label for="city" style="width:100px"><strong>City</strong></label>
+                            <input type="text" name="A_City" id="A_City" style="width:100px" value="">
+                            </div>
+                            <div  style="float:left">
+                            <label for="city" style="width:100px"><strong>State</strong></label>
+                            <input type="text" name="A_State" id="A_State"  style="width:100px" value="">
+                        </div>
+                    <div style="display: block; clear: both;"></div>
+                    </div>
+                    
+                </fieldset>
+                <fieldset id='4'>
+                    <legend>Finalize Estimate</legend>
+                    <div style="overflow: hidden;">
+                        <div style="float:left; margin-right:8px; ">
+                            <label for="N_First" style="width:100px"><strong>First Name</strong></label>
+                            <input type="text" name="N_First" id="N_First" style="width:100px" value="">
+                            </div>
+                            <div  style="float:left">
+                            <label for="N_Last" style="width:100px"><strong>Last Name</strong></label>
+                            <input type="text" name="N_Last" id="N_Last"  style="width:100px" value="">
+                        </div>
+                    <div style="display: block; clear: both;"></div>
+                    </div>
+                     <div style="overflow: hidden;">
+                        <div style="float:left; margin-right:8px; ">
+                            <label for="C_Email" style="width:100px"><strong>Email</strong></label>
+                            <input type="text" name="C_Email" id="C_Email" style="width:100px" value="">
+                            </div>
+                            <div  style="float:left">
+                            <label for="C_HomePhone" style="width:100px"><strong>Phone</strong></label>
+                            <input type="text" name="C_HomePhone" id="C_HomePhone"  style="width:100px" value="">
+                        </div>
+                    <div style="display: block; clear: both;"></div>
+                    </div>
+                <input id="SaveAccount" type="submit" value="Get Savings Quote" />
+                </fieldset>
+        
+                
+                <div style="width:100%; height:1px; clear:both;"></div>	
+                <input type="hidden" name="X_CampaignID" id="X_CampaignID" value="92"/>
+                <input type="hidden" name="X_Accept" 	id="X_Accept" value="YES"/>
+                <input type="hidden" name="X_Redirect" 	id="X_Redirect" value="/thankyou.html"/>
+                </form>
+           </div>
+</div>
+</div>
+</body>
+</html>
